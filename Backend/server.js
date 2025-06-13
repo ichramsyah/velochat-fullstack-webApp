@@ -7,16 +7,16 @@ import userRoutes from './routes/userRoutes.js';
 import chatRoutes from './routes/chatRoutes.js';
 import messageRoutes from './routes/messageRoutes.js';
 
-// --- Konfigurasi Dasar ---
+// Konfigurasi Dasar
 dotenv.config();
 connectDB();
 const app = express();
 
-// --- Middleware ---
+// Middleware
 app.use(cors());
 app.use(express.json());
 
-// --- Rute API ---
+// Rute API
 app.get('/', (req, res) => {
   res.send('API VeloChat sedang berjalan...');
 });
@@ -24,51 +24,50 @@ app.use('/api/users', userRoutes);
 app.use('/api/chat', chatRoutes);
 app.use('/api/message', messageRoutes);
 
-// --- Menjalankan Server ---
+// Server
 const PORT = process.env.PORT || 5000;
 const server = app.listen(PORT, () => {
   console.log(`🚀 Server berjalan pada port http://localhost:${PORT}`);
 });
 
-// --- Konfigurasi Socket.IO ---
+// Socket.IO
 const io = new Server(server, {
-  pingTimeout: 60000, // 60 detik sebelum timeout
+  pingTimeout: 60000,
   cors: {
-    origin: 'http://localhost:3000',
+    origin: 'http://localhost:5173',
     methods: ['GET', 'POST'],
   },
 });
 
 io.on('connection', (socket) => {
-  console.log('🔌 Terhubung ke socket.io');
+  console.log(`[BACKEND LOG] Terhubung ke socket.io dengan ID: ${socket.id}`);
 
   socket.on('setup', (userData) => {
     socket.join(userData._id);
-    console.log(`User ${userData.name} bergabung ke room: ${userData._id}`);
+    console.log(`[BACKEND LOG] User ${userData._id} bergabung ke room pribadinya.`);
     socket.emit('connected');
   });
 
-  // Listener untuk bergabung ke sebuah room chat
   socket.on('join chat', (room) => {
     socket.join(room);
-    console.log('user bergabung ke room: ' + room);
+    console.log(`[BACKEND LOG] User bergabung ke room chat: ${room}`);
   });
 
-  // Listener untuk pesan baru
   socket.on('new message', (newMessageReceived) => {
     let chat = newMessageReceived.chat;
+    if (!chat.users) return console.log('[BACKEND LOG] Error: chat.users tidak terdefinisi');
 
-    if (!chat.users) return console.log('chat.users tidak terdefinisi');
+    console.log(`[BACKEND LOG] Pesan baru diterima untuk chat ${chat._id}: "${newMessageReceived.content}"`);
 
     chat.users.forEach((user) => {
-      // Jangan kirim notifikasi ke diri sendiri
-      if (user._id == newMessageReceived.sender.id) return;
+      if (user._id == newMessageReceived.sender._id) return;
 
-      socket.in(user._id).emmit('message received', newMessageReceived);
+      console.log(`[BACKEND LOG] Mengirim pesan ke room user: ${user._id}`);
+      socket.in(user._id).emit('message received', newMessageReceived);
     });
   });
 
   socket.on('disconnect', () => {
-    console.log('🔌 Pengguna terputus dari socket.io');
+    console.log(`[BACKEND LOG] Koneksi socket ${socket.id} terputus.`);
   });
 });
