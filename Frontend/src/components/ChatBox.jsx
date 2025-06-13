@@ -20,6 +20,16 @@ const ChatBox = ({ socket }) => {
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
+
+    const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  useEffect(scrollToBottom, [messages]);
+
+  const fetchMessages = async () => {
+    if (!selectedChat) return;
+    setLoading(true);
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
