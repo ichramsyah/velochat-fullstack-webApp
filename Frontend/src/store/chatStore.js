@@ -5,3 +5,4 @@ const useChatStore = create((set) => ({
   setSelectedChat: (chat) => set({ selectedChat: chat }),
 }));
 
+export default useChatStore;
