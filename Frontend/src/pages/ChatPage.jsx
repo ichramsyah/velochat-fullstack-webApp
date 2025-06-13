@@ -1,13 +1,5 @@
 // src/pages/ChatPage.jsx
 
-import React, { useEffect, useState } from 'react';
-import useUserStore from '../store/userStore';
-import Header from '../components/Header';
-import MyChats from '../components/MyChats';
-import ChatBox from '../components/ChatBox';
-import { io } from 'socket.io-client';
-
-const ENDPOINT = 'http://localhost:5000';
 
 const ChatPage = () => {
   const { userInfo } = useUserStore((state) => state);
