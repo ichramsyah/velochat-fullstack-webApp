@@ -6,13 +6,6 @@ import Chat from '../models/chatModel.js';
 // @route   POST /api/message
 // @access  Protected
 
-const sendMessage = async (req, res) => {
-  const { content, chatId } = req.body;
-
-  if (!content || !chatId) {
-    console.log('Konten atau ChatId tidak valid!');
-    return res.sendStatus(400);
-  }
 
   const newMessage = {
     sender: req.user._id,
