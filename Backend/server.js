@@ -32,19 +32,6 @@ const server = app.listen(PORT, () => {
   console.log(`🚀 Server berjalan pada port http://localhost:${PORT}`);
 });
 
- socket.on('new message', (newMessageReceived) => {
-    let chat = newMessageReceived.chat;
-    if (!chat.users) return console.log('[BACKEND LOG] Error: chat.users tidak terdefinisi');
-
-    console.log(`[BACKEND LOG] Pesan baru diterima untuk chat ${chat._id}: "${newMessageReceived.content}"`);
-
-    chat.users.forEach((user) => {
-      if (user._id == newMessageReceived.sender._id) return;
-
-      console.log(`[BACKEND LOG] Mengirim pesan ke room user: ${user._id}`);
-      socket.in(user._id).emit('message received', newMessageReceived);
-    });
-  });
 
 // Socket.IO
 const io = new Server(server, {
