@@ -42,19 +42,6 @@ const io = new Server(server, {
   },
 });
 
-io.on('connection', (socket) => {
-  console.log(`[BACKEND LOG] Terhubung ke socket.io dengan ID: ${socket.id}`);
-
-  socket.on('setup', (userData) => {
-    socket.join(userData._id);
-    console.log(`[BACKEND LOG] User ${userData._id} bergabung ke room pribadinya.`);
-    socket.emit('connected');
-  });
-
-  socket.on('join chat', (room) => {
-    socket.join(room);
-    console.log(`[BACKEND LOG] User bergabung ke room chat: ${room}`);
-  });
 
  
 
