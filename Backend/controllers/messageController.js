@@ -20,23 +20,7 @@ const sendMessage = async (req, res) => {
     chat: chatId,
   };
 
-  try {
-    let message = await Message.create(newMessage);
-    message = await message.populate('sender', 'name profilePic');
-    message = await message.populate('chat');
-    message = await User.populate(message, {
-      path: 'chat.users',
-      select: 'name profilePic email',
-    });
-
-    await Chat.findByIdAndUpdate(req.body.chatId, { latestMessage: message });
-
-    res.json(message);
-  } catch (error) {
-    res.status(400);
-    throw new Error(error.message);
-  }
-};
+ 
 
 // @desc    Mengambil semua pesan dari sebuah chat
 // @route   GET /api/message/:chatId
