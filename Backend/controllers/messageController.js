@@ -20,6 +20,15 @@ const sendMessage = async (req, res) => {
     chat: chatId,
   };
 
+  const allMessages = async (req, res) => {
+  try {
+    const messages = await Message.find({ chat: req.params.chatId }).populate('sender', 'name profilePic email').populate('chat');
+    res.json(messages);
+  } catch (error) {
+    res.status(400);
+    throw new Error(error.message);
+  }
+};
  
 
 // @desc    Mengambil semua pesan dari sebuah chat
