@@ -66,6 +66,19 @@ io.on('connection', (socket) => {
       socket.in(user._id).emit('message received', newMessageReceived);
     });
   });
+   socket.on('new message', (newMessageReceived) => {
+    let chat = newMessageReceived.chat;
+    if (!chat.users) return console.log('[BACKEND LOG] Error: chat.users tidak terdefinisi');
+
+    console.log(`[BACKEND LOG] Pesan baru diterima untuk chat ${chat._id}: "${newMessageReceived.content}"`);
+
+    chat.users.forEach((user) => {
+      if (user._id == newMessageReceived.sender._id) return;
+
+      console.log(`[BACKEND LOG] Mengirim pesan ke room user: ${user._id}`);
+      socket.in(user._id).emit('message received', newMessageReceived);
+    });
+  });
 
   socket.on('disconnect', () => {
     console.log(`[BACKEND LOG] Koneksi socket ${socket.id} terputus.`);
