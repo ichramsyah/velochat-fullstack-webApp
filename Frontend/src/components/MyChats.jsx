@@ -27,6 +27,42 @@ const MyChats = () => {
             Authorization: `Bearer ${userInfo.token}`,
           },
         };
+        
+const MyChats = () => {
+  const { userInfo } = useUserStore((state) => state);
+  const { selectedChat, setSelectedChat } = useChatStore((state) => state);
+
+  const [chats, setChats] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchChats = async () => {
+      if (!userInfo?.token) return;
+      setLoading(true);
+      try {
+        const config = {
+          headers: {
+            Authorization: `Bearer ${userInfo.token}`,
+          },
+        };
+        
+const MyChats = () => {
+  const { userInfo } = useUserStore((state) => state);
+  const { selectedChat, setSelectedChat } = useChatStore((state) => state);
+
+  const [chats, setChats] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchChats = async () => {
+      if (!userInfo?.token) return;
+      setLoading(true);
+      try {
+        const config = {
+          headers: {
+            Authorization: `Bearer ${userInfo.token}`,
+          },
+        };
         const { data } = await api.get('/api/chat', config);
         setChats(data);
       } catch (error) {
