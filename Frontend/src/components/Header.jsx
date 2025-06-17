@@ -13,6 +13,13 @@ const Header = () => {
   const handleLogout = () => {
     logout();
     navigate('/login');
+        store/userStore';
+
+const Header = () => {
+  const { userInfo, logout } = useUserStore((state) => state);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
   };
 
   return (
