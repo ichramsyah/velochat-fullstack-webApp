@@ -14,6 +14,15 @@ const LoginPage = () => {
 
    = useState('');
   const [password, setPassword] = useState('');
+  tate('');
+  const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const navigate = useNavigate();
+  const setUserInfo = useUserStore((state) => state.setUserInfo);
+
+   = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
