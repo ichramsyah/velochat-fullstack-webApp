@@ -35,6 +35,9 @@ const accessChat = async (req, res) => {
 
     try {
       const createdChat = await Chat.create(chatData);
+      const io = req.app.get('socketio');
+      io.to(req.user._id.toString()).emit('contact_list_updated');
+      io.to(userId.toString()).emit('contact_list_updated');
       const fullChat = await Chat.findOne({ _id: createdChat._id }).populate('users', '-password');
       res.status(200).send(fullChat);
     } catch (error) {

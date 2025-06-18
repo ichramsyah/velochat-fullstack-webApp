@@ -1,3 +1,5 @@
+// backend/models/userModel.js
+
 import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema(
@@ -10,7 +12,7 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: [true, 'Email tidak boleh kosong'],
       unique: true,
-      match: [/.+\@.+\..+/, 'Masukan format email yang valid'],
+      match: [/.+\@.+\..+/, 'Masukkan format email yang valid'],
     },
     password: {
       type: String,
@@ -18,8 +20,17 @@ const userSchema = new mongoose.Schema(
     },
     profilePic: {
       type: String,
-      default: '',
+      default: 'https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg',
     },
+    publicKey: {
+      type: String,
+    },
+    contacts: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+      },
+    ],
   },
   {
     timestamps: true,
@@ -27,4 +38,5 @@ const userSchema = new mongoose.Schema(
 );
 
 const User = mongoose.model('User', userSchema);
+
 export default User;
