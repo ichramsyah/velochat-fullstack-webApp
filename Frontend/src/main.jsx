@@ -19,14 +19,7 @@ import LoginSuccessPage from './pages/LoginSuccessPage.jsx';
 import ProfilePage from './pages/ProfilePage.jsx';
 
 const router = createBrowserRouter([
-  {
-    path: '/',
-    element: (
-      <ProtectedRoute>
-        <ChatPage />
-      </ProtectedRoute>
-    ),
-  },
+  
   {
     path: '/login',
     element: (
