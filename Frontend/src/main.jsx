@@ -55,14 +55,7 @@ const router = createBrowserRouter([
       </ProtectedRoute>
     ),
   },
-  {
-    path: '/profile', // <-- RUTE BARU
-    element: (
-      <ProtectedRoute>
-        <ProfilePage />
-      </ProtectedRoute>
-    ),
-  },
+ 
 ]);
 
 const VITE_GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
