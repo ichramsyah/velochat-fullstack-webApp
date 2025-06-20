@@ -9,6 +9,21 @@ const FriendRequestPopover = ({ onClose }) => {
   const [loading, setLoading] = useState(true);
   const { userInfo } = useUserStore((state) => state);
 
+
+  useEffect(() => {
+    const fetchRequests = async () => {
+      try {
+        const data = await getPendingRequests(userInfo.token);
+        setRequests(data);
+      } catch (error) {
+        toast.error('Gagal memuat permintaan.');
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchRequests();
+  }, [userInfo.token]);
+  
   useEffect(() => {
     const fetchRequests = async () => {
       try {
