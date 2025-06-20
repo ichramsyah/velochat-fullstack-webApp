@@ -46,7 +46,7 @@ Selamat datang di VeloChat! Sebuah aplikasi web chat modern, full-stack, dan rea
 
 ## Tentang VeloChat
 
-VeloChat adalah sebuah proyek ambisius untuk membangun aplikasi percakapan single-page application (SPA) yang fungsional dan kaya fitur. Proyek ini mencakup seluruh siklus pengembangan, mulai dari desain arsitektur backend REST API dan koneksi real-time dengan Socket.IO, hingga pembangunan antarmuka frontend yang reaktif dan modern menggunakan React Javascript. Fokus utama proyek ini adalah pada keamanan (autentikasi JWT & Google OAuth), pengalaman pengguna seperti notifikasi real-time, indikator typing, pesan terbaca, dan kualitas kode yang bersih dan terstruktur.
+VeloChat adalah sebuah proyek ambisius untuk membangun aplikasi percakapan single-page application (SPA) yang fungsional dan kaya fitur. Proyek ini mencakup seluruh siklus pengembangan, mulai dari desain arsitektur backend REST API dan koneksi real-time dengan Socket.IO, hingga pembangunan antarmuka frontend yang reaktif dan modern menggunakan React Javascript. Fokus utama proyek ini adalah pada keamanan (autentikasi JWT & Google OAuth), pengalaman pengguna seperti notifikasi real-time, indikator typing, pesan terbaca, tampilan responsif, dan kualitas kode yang bersih dan terstruktur.
 
 ## Fitur Utama ✅
 
@@ -66,6 +66,7 @@ Aplikasi ini dilengkapi dengan berbagai fitur canggih yang menjadikannya sebuah 
 - ✅ Sistem **Permintaan Pertemanan** (Mengirim, Menerima, Menolak).
 - ✅ Notifikasi permintaan pertemanan secara real-time.
 - ✅ Daftar Kontak yang dinamis dan terpisah dari percakapan.
+- ✅ Pencarian daftar kontak dengan fitur debounce
 
 #### **Fitur Chat Real-time**
 
