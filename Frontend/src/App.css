@@ -1,0 +1,31 @@
+@import 'tailwindcss';
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(95%);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(100%);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInScale 150ms ease-out forwards;
+}
+
+@keyframes slideFade {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-fade {
+  animation: slideFade 200ms ease-out forwards;
+}
