@@ -1,3 +1,5 @@
+![image](images/mockup.png)
+
 # VeloChat - Aplikasi Web Chat Modern Real-Time
 
 [![Lisensi: MIT](https://img.shields.io/badge/Lisensi-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
