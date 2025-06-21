@@ -33,7 +33,7 @@ Selamat datang di direktori frontend untuk aplikasi VeloChat. Bagian ini bertang
 - **Antarmuka Autentikasi:** Menyediakan halaman Login dan Register dengan validasi input, serta tombol untuk "Login dengan Google".
 - **Halaman Chat Utama:** Layout dua kolom yang responsif, menampilkan daftar percakapan di satu sisi dan area chat aktif di sisi lain, dengan dukungan mobile-friendly.
 - **Manajemen Pertemanan:**
-  - Modal pop-up untuk mencari pengguna baru berdasarkan email.
+  - Modal pop-up untuk mencari pengguna baru berdasarkan email dengan mekanisme debounce untuk optimasi pencarian.
   - Tombol untuk mengirim permintaan pertemanan.
   - Popover notifikasi untuk menampilkan daftar permintaan pertemanan yang masuk, lengkap dengan tombol "Terima" dan "Tolak".
 - **Interaksi Chat Real-time:**
@@ -69,6 +69,7 @@ Selamat datang di direktori frontend untuk aplikasi VeloChat. Bagian ini bertang
 - **"Lifting State Up" Pattern:** Memusatkan state dan logika yang kompleks (seperti koneksi socket dan daftar chat) di komponen induk (`ChatPage`) dan meneruskannya ke komponen anak sebagai props.
 - **Asynchronous Operations:** Menangani panggilan API dan operasi yang memakan waktu menggunakan sintaks `async/await` untuk kode yang lebih bersih.
 - **Protected Routes:** Menerapkan komponen pembungkus (`ProtectedRoute`, `PublicRoute`) untuk mengatur hak akses ke halaman tertentu berdasarkan status autentikasi pengguna.
+- **Debouncing:** Mengimplementasikan debounce pada fungsi pencarian kontak untuk mengurangi jumlah panggilan API dan meningkatkan performa aplikasi dengan menunda eksekusi hingga pengguna selesai mengetik (delay 300ms).
 
 ## Struktur Proyek
 

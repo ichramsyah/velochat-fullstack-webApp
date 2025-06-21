@@ -11,7 +11,7 @@
 [![React Loading Skeleton](https://img.shields.io/badge/Loading_Skeleton-60A5FA?style=for-the-badge&logo=react&logoColor=white)](https://www.npmjs.com/package/react-loading-skeleton)
 [![date-fns](https://img.shields.io/badge/date--fns-243A5A?style=for-the-badge&logo=date-fns&logoColor=white)](https://date-fns.org/)
 
-[README.md](README.md) Indonesia Ver.
+[README.md](README-en.md) English Ver.
 
 Welcome to the frontend directory of the VeloChat application. This section is responsible for all user interfaces (UI) and user experience (UX) that users see and interact with. The application is built as a **Single-Page Application (SPA)** using **React** and **Vite** to ensure a fast development process and optimized build output.
 
@@ -33,7 +33,7 @@ Welcome to the frontend directory of the VeloChat application. This section is r
 - **Authentication Interface:** Provides Login and Register pages with input validation, along with a "Login with Google" button.
 - **Main Chat Page:** A responsive two-column layout displaying the conversation list on one side and the active chat area on the other, with mobile-friendly support.
 - **Friendship Management:**
-  - Pop-up modal to search for new users by email.
+  - Pop-up modal to search for new users by email with a debounce mechanism for optimized search performance.
   - Button to send friend requests.
   - Notification popover showing incoming friend requests with "Accept" and "Decline" buttons.
 - **Real-time Chat Interactions:**
@@ -69,6 +69,7 @@ Welcome to the frontend directory of the VeloChat application. This section is r
 - **"Lifting State Up" Pattern:** Centralizing complex state and logic (e.g., socket connections and chat lists) in parent components (`ChatPage`) and passing them to child components as props.
 - **Asynchronous Operations:** Handling API calls and time-consuming operations with `async/await` for cleaner code.
 - **Protected Routes:** Implementing wrapper components (`ProtectedRoute`, `PublicRoute`) to control access to specific pages based on user authentication status.
+- **Debouncing:** Implementing debounce on the contact search function to reduce API calls and improve app performance by delaying execution until the user finishes typing (300ms delay).
 
 ## Project Structure
 
