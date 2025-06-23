@@ -1,4 +1,6 @@
-# VeloChat - Web Aplikasi Chat Modern Real-Time
+![image](images/mockup.png)
+
+# VeloChat - Website Aplikasi Chat Real-Time
 
 [![Lisensi: MIT](https://img.shields.io/badge/Lisensi-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![React](https://img.shields.io/badge/React-19-blue)](https://react.dev/)
@@ -32,6 +34,7 @@
 Selamat datang di VeloChat! Sebuah aplikasi web chat modern, full-stack, dan real-time yang dibangun dari nol dengan penuh dedikasi oleh Ichramsyah Abdurrachman. Aplikasi ini dirancang untuk memberikan pengalaman berkomunikasi yang aman, cepat, dan intuitif.
 
 🎥 Video Demo: Lihat demo video VeloChat di [https://youtube.com/demo-velochat](https://youtu.be/2FnM3nW0jvQ?feature=shared)
+
 ✨ Link Design Figma: Lihat desain Rinema di [https://www.figma.com/velochat-design](https://www.figma.com/design/u4FAs9jLLgjoOXie9Zah3C/VeloChat?node-id=0-1&t=YhxmxUoMLAtetpEx-1)
 
 ## Daftar Isi
@@ -49,7 +52,7 @@ Selamat datang di VeloChat! Sebuah aplikasi web chat modern, full-stack, dan rea
 
 ## Tentang VeloChat
 
-VeloChat adalah sebuah proyek ambisius untuk membangun aplikasi percakapan single-page application (SPA) yang fungsional dan kaya fitur. Proyek ini mencakup seluruh siklus pengembangan, mulai dari desain arsitektur backend REST API dan koneksi real-time dengan Socket.IO, hingga pembangunan antarmuka frontend yang reaktif dan modern menggunakan React Javascript. Fokus utama proyek ini adalah pada keamanan (autentikasi JWT & Google OAuth), pengalaman pengguna seperti notifikasi real-time, indikator typing, pesan terbaca, dan kualitas kode yang bersih dan terstruktur.
+VeloChat adalah sebuah proyek ambisius untuk membangun aplikasi percakapan single-page application (SPA) yang fungsional dan kaya fitur. Proyek ini mencakup seluruh siklus pengembangan, mulai dari desain arsitektur backend REST API dan koneksi real-time dengan Socket.IO, hingga pembangunan antarmuka frontend yang reaktif dan modern menggunakan React Javascript. Fokus utama proyek ini adalah pada keamanan (autentikasi JWT & Google OAuth), pengalaman pengguna seperti notifikasi real-time, indikator typing, pesan terbaca, tampilan responsif, dan kualitas kode yang bersih dan terstruktur.
 
 ## Fitur Utama ✅
 
@@ -69,6 +72,7 @@ Aplikasi ini dilengkapi dengan berbagai fitur canggih yang menjadikannya sebuah 
 - ✅ Sistem **Permintaan Pertemanan** (Mengirim, Menerima, Menolak).
 - ✅ Notifikasi permintaan pertemanan secara real-time.
 - ✅ Daftar Kontak yang dinamis dan terpisah dari percakapan.
+- ✅ Pencarian daftar kontak dengan fitur debounce
 
 #### **Fitur Chat Real-time**
 
