@@ -24,6 +24,7 @@ Welcome to the frontend directory of the VeloChat application. This section is r
 - [Environment Variable Setup](#environment-variable-setup-env)
 - [Installation & Running](#installation--running)
 - [Deployment](#deployment)
+- [Screenshot](#screenshot)
 - [Contributing](#contributing)
 - [Troubleshooting](#troubleshooting)
 - [License](#license)
@@ -130,6 +131,28 @@ VITE_GOOGLE_CLIENT_ID=xxxxxxxx.apps.googleusercontent.com
 - `npm run dev`: Runs the app in development mode with hot reloading.
 - `npm run build`: Builds the app for production into the `/dist` folder.
 - `npm run preview`: Runs the production build locally for testing.
+
+## Screenshot
+
+**Login Page**
+
+![image](public/images/loginpage.png)
+
+**Register Page**
+
+![image](public/images/registerpage.png)
+
+**Main Page**
+
+![image](public/images/utama.png)
+
+**Profile Page**
+
+![image](public/images/profile.png)
+
+**Add Contact Page**
+
+![image](public/images/findcontact.png)
 
 ## Deployment
 

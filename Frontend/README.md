@@ -24,6 +24,7 @@ Selamat datang di direktori frontend untuk aplikasi VeloChat. Bagian ini bertang
 - [Setup Variabel Environment](#setup-variabel-environment-env)
 - [Instalasi & Menjalankan](#instalasi--menjalankan)
 - [Deployment](#deployment)
+- [Tangkapan Layar](#tangkapan-layar)
 - [Kontribusi](#kontribusi)
 - [Troubleshooting](#troubleshooting)
 - [Lisensi](#lisensi)
@@ -150,6 +151,28 @@ Untuk deployment frontend ke lingkungan produksi, langkah-langkah berikut dapat 
    Setelah deployment selesai, pastikan URL deployment diuji dengan backend yang sudah berjalan (misalnya, di Railway).
 
 **Catatan:** Pastikan backend (Node.js/Express) sudah dideploy dan URL-nya dikonfigurasi dengan benar di frontend (misalnya, melalui Axios baseURL).
+
+## Tangkapan Layar
+
+**Halaman Login**
+
+![image](public/images/loginpage.png)
+
+**Halaman Register**
+
+![image](public/images/registerpage.png)
+
+**Halaman Utama**
+
+![image](public/images/utama.png)
+
+**Halaman Profile**
+
+![image](public/images/profile.png)
+
+**Halaman Pencaian Kontak**
+
+![image](public/images/findcontact.png)
 
 ## Kontribusi
 
