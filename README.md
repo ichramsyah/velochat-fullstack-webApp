@@ -31,6 +31,8 @@
 [![MongoDB Atlas](https://img.shields.io/badge/MongoDB_Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/cloud/atlas)
 [![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)](https://cloud.google.com/)
 
+[README.md](README-en.markdown) English Ver.
+
 Selamat datang di VeloChat! Sebuah aplikasi web chat modern, full-stack, dan real-time yang dibangun dari nol dengan penuh dedikasi oleh Ichramsyah Abdurrachman. Aplikasi ini dirancang untuk memberikan pengalaman berkomunikasi yang aman, cepat, dan intuitif.
 
 🎥 Video Demo: Lihat demo video VeloChat di [https://youtube.com/demo-velochat](https://youtu.be/2FnM3nW0jvQ?feature=shared)
