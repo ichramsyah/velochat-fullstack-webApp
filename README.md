@@ -107,8 +107,8 @@ Aplikasi ini dilengkapi dengan berbagai fitur canggih yang menjadikannya sebuah 
 
 Aplikasi ini di-deploy menggunakan platform modern untuk CI/CD:
 
-- **Frontend:** [**Vercel**](URL_DEPLOYMENT_FRONTEND_ANDA)
-- **Backend:** [**Railway**](URL_DEPLOYMENT_BACKEND_ANDA)
+- **Frontend:** [**Vercel**](https://velochat.vercel.app)
+- **Backend:** [**Railway**](https://velochat-backend-restful-apis-production.up.railway.app/)
 
 _(Catatan: Ganti URL di atas dengan link deployment Anda nanti)_
 

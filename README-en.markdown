@@ -105,8 +105,8 @@ The application is equipped with advanced features that make it a comprehensive 
 
 The application is deployed using modern CI/CD platforms:
 
-- **Frontend:** [**Vercel**](YOUR_FRONTEND_DEPLOYMENT_URL)
-- **Backend:** [**Railway**](YOUR_BACKEND_DEPLOYMENT_URL)
+- **Frontend:** [**Vercel**](https://velochat.vercel.app)
+- **Backend:** [**Railway**](https://velochat-backend-restful-apis-production.up.railway.app/)
 
 _(Note: Replace the URLs above with your actual deployment links)_
 
