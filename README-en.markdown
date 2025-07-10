@@ -33,6 +33,8 @@
 
 Welcome to VeloChat! A modern, full-stack, real-time chat web application built from scratch with dedication by Ichramsyah Abdurrachman. This application is designed to provide a secure, fast, and intuitive communication experience.
 
+🔥 Live Demo: visit VeloChat in [https://velochat.vercel.app](https://velochat.vercel.app)
+
 🎥 Video Demo: Watch the VeloChat demo video at [https://youtube.com/demo-velochat](https://youtu.be/2FnM3nW0jvQ?feature=shared)
 
 ✨ Figma Design Link: View the Rinema design at [https://www.figma.com/velochat-design](https://www.figma.com/design/u4FAs9jLLgjoOXie9Zah3C/VeloChat?node-id=0-1&t=YhxmxUoMLAtetpEx-1)
@@ -52,7 +54,7 @@ Welcome to VeloChat! A modern, full-stack, real-time chat web application built 
 
 ## About VeloChat
 
-VeloChat is an ambitious project to build a functional and feature-rich single-page application (SPA) for conversations. This project covers the entire development lifecycle, from designing a backend REST API architecture and real-time connections with Socket.IO to building a reactive and modern frontend interface using React JavaScript. The main focus is on security (JWT & Google OAuth authentication), user experience (real-time notifications, typing indicators, read receipts, responsive design), and clean, structured code quality.
+VeloChat is an ambitious project to build a functional and feature-rich single-page application (SPA) for conversations. This project covers the entire development lifecycle, from designing a backend RESTful APIs architecture and real-time connections with Socket.IO to building a reactive and modern frontend interface using React JavaScript. The main focus is on security (JWT & Google OAuth authentication), user experience (real-time notifications, typing indicators, read receipts, responsive design), and clean, structured code quality.
 
 ## Key Features ✅
 
