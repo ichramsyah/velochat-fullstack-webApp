@@ -110,8 +110,6 @@ Aplikasi ini di-deploy menggunakan platform modern untuk CI/CD:
 - **Frontend:** [**Vercel**](https://velochat.vercel.app)
 - **Backend:** [**Railway**](https://velochat-backend-restful-apis-production.up.railway.app/)
 
-_(Catatan: Ganti URL di atas dengan link deployment Anda nanti)_
-
 ## Struktur Database
 
 Aplikasi ini menggunakan 4 model utama di MongoDB untuk menstrukturkan data:

@@ -108,8 +108,6 @@ The application is deployed using modern CI/CD platforms:
 - **Frontend:** [**Vercel**](https://velochat.vercel.app)
 - **Backend:** [**Railway**](https://velochat-backend-restful-apis-production.up.railway.app/)
 
-_(Note: Replace the URLs above with your actual deployment links)_
-
 ## Database Structure
 
 The application uses four main models in MongoDB to structure data:
