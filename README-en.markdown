@@ -33,7 +33,9 @@
 
 Welcome to VeloChat! A modern, full-stack, real-time chat web application built from scratch with dedication by Ichramsyah Abdurrachman. This application is designed to provide a secure, fast, and intuitive communication experience.
 
-🔥 Live Demo: visit VeloChat in [https://velochat.vercel.app](https://velochat.vercel.app)
+🔥 Live Site: visit VeloChat in [https://velochat.vercel.app](https://velochat.vercel.app)
+
+🔥 Live Route API: visit API VeloChat in [https://velochat-backend-restful-apis-production.up.railway.app/](https://velochat-backend-restful-apis-production.up.railway.app/)
 
 🎥 Video Demo: Watch the VeloChat demo video at [https://youtube.com/demo-velochat](https://youtu.be/2FnM3nW0jvQ?feature=shared)
 
@@ -105,8 +107,8 @@ The application is equipped with advanced features that make it a comprehensive 
 
 The application is deployed using modern CI/CD platforms:
 
-- **Frontend:** [**Vercel**](https://velochat.vercel.app)
-- **Backend:** [**Railway**](https://velochat-backend-restful-apis-production.up.railway.app/)
+- **Frontend:** [**https://velochat.vercel.app**](https://velochat.vercel.app)
+- **Backend:** [**https://velochat-backend-restful-apis-production.up.railway.app/**](https://velochat-backend-restful-apis-production.up.railway.app/)
 
 ## Database Structure
 
