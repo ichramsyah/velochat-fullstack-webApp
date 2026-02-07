@@ -31,7 +31,7 @@
 [![MongoDB Atlas](https://img.shields.io/badge/MongoDB_Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/cloud/atlas)
 [![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)](https://cloud.google.com/)
 
-[README.md](README-en.markdown) English Ver.
+[README.md](README.markdown) English Ver.
 
 Selamat datang di VeloChat! Sebuah aplikasi web chat modern, full-stack, dan real-time yang dibangun dari nol dengan penuh dedikasi oleh Ichramsyah Abdurrachman. Aplikasi ini dirancang untuk memberikan pengalaman berkomunikasi yang aman, cepat, dan intuitif.
 
@@ -109,6 +109,70 @@ Aplikasi ini di-deploy menggunakan platform modern untuk CI/CD:
 
 - **Frontend:** [**Vercel**](https://velochat.vercel.app)
 - **Backend:** [**Railway**](https://velochat-backend-restful-apis-production.up.railway.app/)
+
+## Arsitektur
+
+Arsitektur VeloChat dibangun menggunakan **stack MERN** (MongoDB, Express.js, React, Node.js) dan memanfaatkan **Socket.IO** untuk komunikasi dua arah secara real-time.
+
+### Gambaran Umum Tingkat Tinggi
+
+1. **Klien (Frontend)**: Dibangun dengan React dan Vite, bertanggung jawab atas antarmuka pengguna dan interaksi pengguna. Berkomunikasi dengan backend melalui HTTP REST API (menggunakan Axios) untuk operasi standar (autentikasi, pembaruan profil) dan Socket.IO untuk fitur chat real-time.
+2. **Server (Backend)**: Aplikasi Express.js yang memproses permintaan API, mengelola autentikasi (Passport.js/JWT), dan menangani koneksi WebSocket.
+3. **Database**: MongoDB Atlas menyimpan data pengguna, riwayat chat, dan pesan.
+4. **Layanan Eksternal**:
+   - **Google OAuth**: Untuk autentikasi pihak ketiga yang aman.
+   - **Cloudinary**: Untuk menyimpan foto profil.
+
+### Diagram Arsitektur
+
+```mermaid
+graph TD
+    User([Pengguna])
+    Client["Frontend (React + Vite)"]
+    Server["Backend (Node/Express)"]
+    DB[("MongoDB Atlas")]
+    Google[Google OAuth]
+    Cloud[Cloudinary]
+
+    User -- "HTTPS" --> Client
+    Client -- "REST API (Axios)" --> Server
+    Client -- "Real-time (Socket.IO)" --> Server
+    Server <-->|Baca/Tulis| DB
+    Server -- "Strategi Auth" --> Google
+    Server -- "Unggah Gambar" --> Cloud
+```
+
+### Alur Pengguna
+
+```mermaid
+graph TD
+    Start([Mulai]) --> Login{Masuk / Daftar}
+    Login -- "Berhasil" --> Dashboard[Beranda]
+    Dashboard --> AddFriend[Tambah Teman]
+    Dashboard --> SelectChat[Pilih Chat]
+    AddFriend -- "Permintaan Diterima" --> Chat[Ruang Chat]
+    SelectChat --> Chat
+    Chat --> SendMsg[Kirim Pesan]
+```
+
+### Struktur Proyek
+
+Proyek dibagi menjadi dua direktori utama:
+
+- **Frontend (`/frontend`)**: Berisi kode sumber aplikasi React, aset publik, dan konfigurasi build.
+  - `src/api`: Logika integrasi API.
+  - `src/components`: Komponen UI yang dapat digunakan ulang.
+  - `src/hooks`: Custom React hooks.
+  - `src/layouts`: Definisi layout halaman.
+  - `src/pages`: View/halaman utama aplikasi.
+  - `src/store`: Store manajemen state menggunakan Zustand.
+  - `src/utils`: Fungsi utilitas.
+- **Backend (`/backend`)**: Berisi logika server API.
+  - `config`: File konfigurasi (misalnya koneksi DB).
+  - `controllers`: Logika penanganan permintaan.
+  - `middleware`: Middleware kustom (auth, error handling).
+  - `models`: Skema Mongoose untuk MongoDB.
+  - `routes`: Definisi rute API.
 
 ## Struktur Database
 
@@ -188,8 +252,22 @@ Aplikasi ini menggunakan 4 model utama di MongoDB untuk menstrukturkan data:
     npm run dev
     ```
 
-4.  **Akses Aplikasi**
-    - Buka `http://localhost:5173` di browser Anda.
+4.  **Jalankan via Docker (Opsional)**
+
+    Jika Anda lebih suka menjalankan seluruh aplikasi menggunakan Docker:
+
+    1. Pastikan Anda telah menginstal Docker dan Docker Compose.
+    2. Buat file `.env` di kedua direktori `/backend` dan `/frontend`.
+    3. Jalankan perintah berikut dari direktori root:
+
+       ```bash
+       docker-compose up --build
+       ```
+
+    Aplikasi akan dapat diakses di `http://localhost:3000`.
+
+5.  **Akses Aplikasi**
+    - Buka `http://localhost:5173` (Lokal) atau `http://localhost:3000` (Docker) di browser Anda.
 
 ## Lisensi
 

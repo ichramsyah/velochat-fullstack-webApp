@@ -31,6 +31,8 @@
 [![MongoDB Atlas](https://img.shields.io/badge/MongoDB_Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/cloud/atlas)
 [![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)](https://cloud.google.com/)
 
+[README.md](README-id.markdown) Indonesia Ver.
+
 Welcome to VeloChat! A modern, full-stack, real-time chat web application built from scratch with dedication by Ichramsyah Abdurrachman. This application is designed to provide a secure, fast, and intuitive communication experience.
 
 🔥 Live Site: visit VeloChat in [https://velochat.vercel.app](https://velochat.vercel.app)
@@ -110,6 +112,70 @@ The application is deployed using modern CI/CD platforms:
 - **Frontend:** [**https://velochat.vercel.app**](https://velochat.vercel.app)
 - **Backend:** [**https://velochat-backend-restful-apis-production.up.railway.app/**](https://velochat-backend-restful-apis-production.up.railway.app/)
 
+## Architecture
+
+The VeloChat architecture is built on the **MERN stack** (MongoDB, Express.js, React, Node.js), utilizing **Socket.IO** for real-time bidirectional communication.
+
+### High-Level Overview
+
+1.  **Client (Frontend)**: Built with React and Vite, it handles the UI and user interactions. It communicates with the backend via HTTP REST APIs (Axios) for standard operations (auth, profile updates) and Socket.IO for real-time chat features.
+2.  **Server (Backend)**: An Express.js application that processes API requests, manages authentication (Passport.js/JWT), and handles WebSocket connections.
+3.  **Database**: MongoDB Atlas stores user data, chat history, and messages.
+4.  **External Services**:
+    - **Google OAuth**: For secure third-party authentication.
+    - **Cloudinary**: For storing profile pictures.
+
+### Architecture Diagram
+
+```mermaid
+graph TD
+    User([User])
+    Client["Frontend (React + Vite)"]
+    Server["Backend (Node/Express)"]
+    DB[("MongoDB Atlas")]
+    Google[Google OAuth]
+    Cloud[Cloudinary]
+
+    User -- "HTTPS" --> Client
+    Client -- "REST API (Axios)" --> Server
+    Client -- "Real-time (Socket.IO)" --> Server
+    Server <-->|Read/Write| DB
+    Server -- "Auth Strategy" --> Google
+    Server -- "Image Upload" --> Cloud
+```
+
+### User Flow
+
+```mermaid
+graph TD
+    Start([Start]) --> Login{Login / Register}
+    Login -- "Success" --> Dashboard[Dashboard]
+    Dashboard --> AddFriend[Add Friend]
+    Dashboard --> SelectChat[Select Chat]
+    AddFriend -- "Request Accepted" --> Chat[Chat Room]
+    SelectChat --> Chat
+    Chat --> SendMsg[Send Message]
+```
+
+### Project Structure
+
+The project is divided into two main directories:
+
+- **Frontend (`/frontend`)**: Contains the React application source code, public assets, and build configurations.
+  - `src/api`: API integration logic.
+  - `src/components`: Reusable UI components.
+  - `src/hooks`: Custom React hooks.
+  - `src/layouts`: Page layout definitions.
+  - `src/pages`: Main application views/pages.
+  - `src/store`: Zustand state management stores.
+  - `src/utils`: Utility functions.
+- **Backend (`/backend`)**: Contains the API server logic.
+  - `config`: Configuration files (e.g., DB connection).
+  - `controllers`: Logic for handling requests.
+  - `middleware`: Custom middleware (auth, error handling).
+  - `models`: Mongoose schemas for MongoDB.
+  - `routes`: API route definitions.
+
 ## Database Structure
 
 The application uses four main models in MongoDB to structure data:
@@ -169,7 +235,7 @@ The application uses four main models in MongoDB to structure data:
    ```
 
 3. **Set Up the Frontend**
-
+   
    Open a new terminal and, from the project root directory (`/velochat`), run:
 
    ```bash
@@ -189,8 +255,22 @@ The application uses four main models in MongoDB to structure data:
    npm run dev
    ```
 
-4. **Access the Application**
-   - Open `http://localhost:5173` in your browser.
+4. **Run via Docker (Optional)**
+
+   If you prefer to run the entire application using Docker:
+
+   1. Ensure you have Docker and Docker Compose installed.
+   2. Create `.env` files in both `/backend` and `/frontend` directories.
+   3. Run the following command from the root directory:
+
+      ```bash
+      docker-compose up --build
+      ```
+
+   The application will be accessible at `http://localhost:3000`.
+
+5. **Access the Application**
+   - Open `http://localhost:5173` (Local) or `http://localhost:3000` (Docker) in your browser.
 
 ## License
 
